@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record model="ir.ui.view" id="course_form_view">
+        <field name="name">course.form</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <form string="Course Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
     <!-- window action -->
     <!--
@@ -17,7 +32,7 @@
     </record>
 
     <!-- top level menu: no parent -->
-    <menuitem id="main_openacademy_menu" name="Open Academy"/>
+    <menuitem id="main_openacademy_menu" groups="base.group_user" name="Open Academy"/>
     <!-- A first level in the left side menu is needed
          before using action= attribute -->
     <menuitem id="openacademy_menu" name="Open Academy"
